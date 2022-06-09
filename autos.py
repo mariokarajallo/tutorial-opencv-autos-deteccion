@@ -2,7 +2,6 @@ import cv2
 from cv2 import threshold
 from cv2 import THRESH_BINARY
 import numpy as np
-import pandas as pd
 from rastreador import *
 
 # vamos a crear un objeto de seguimiento
@@ -10,6 +9,7 @@ seguimiento = Rastreador()
 
 # Realizamos la lectura del video
 cap = cv2.VideoCapture('avenida3.mp4')
+#cap = cv2.VideoCapture('avenida6.mov')
 
 # Vamos a realizar una deteccion de objetos con camara estable
 # Cambiando el tamaño del historial podemos tener mejores resultados (camara estatica)
@@ -70,7 +70,7 @@ while True:
         # colocamos el id (numero de objeto) arriba del objeto detectado
         cv2.putText(zona, "Movil "+str(id), (x, y - 15),cv2.FONT_HERSHEY_PLAIN, 1, (0, 255, 0), 2)
         # dibujamos el rectangulo
-        cv2.rectangle(zona, (x, y), (x + ancho, y + alto), (0, 255, 0), 3)
+        cv2.rectangle(zona, (x, y), (x + ancho, y + alto), (0, 255, 0), 2)
         
 
     print("Coordenas X-Y-W-H-ID :",info_id)  # muestra las coordenas x,y,ancho,alto y el id

@@ -1,5 +1,4 @@
 import math
-import pandas as pd
 # creamos una clase que sea nuestro rastreador
 
 
@@ -28,7 +27,7 @@ class Rastreador:
             objeto_detectado = False
             for id, pt in self.centro_puntos.items():
                 dist = math.hypot(cx - pt[0], cy - pt[1])
-                if dist < 25:
+                if dist < 5:
                     self.centro_puntos[id] = (cx, cy)
                     print("Centro Puntos: ",self.centro_puntos)
                     objeto_identificado.append([x, y, w, h, id])
